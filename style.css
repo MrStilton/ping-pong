@@ -1,0 +1,38 @@
+.heading{
+    width: 100%;
+    text-align: left;
+    background-color: violet;
+}
+
+.heading h3{
+    display: inline;
+    font-size: 30px;
+    color: white;
+}
+
+ #Instruct{
+    float: right;
+    border: 1px solid white;
+    background-color: violet;
+    height: 30px;
+    font-size: 15px;
+    color: white;
+}
+#steps{
+    text-align: left;
+}
+
+h4{
+    text-align: center;
+}
+.footer{
+    text-align: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: gray;
+    color: black;
+    margin: 1px;
+    font-size: medium;
+}
