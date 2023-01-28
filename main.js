@@ -1,6 +1,8 @@
 
 /*created by prashant shukla */
 
+/*created by prashant shukla */
+
 var paddle2 =10,paddle1=10;
 
 var paddle1X = 10,paddle1Height = 110;
@@ -22,15 +24,19 @@ var ball = {
 }
 
 function setup(){
-  var canvas =  createCanvas(700,600);
-  canvas.parent('canvas');
+  var canvas = createCanvas(700,600);
+  canvas.parent("canvas");
+  video = createCapture(VIDEO);
+  video.size(700,600);
+  video.hide();
+  poseNet = ml5.poseNet(video, modelLoaded);
 }
 
 
 function draw(){
-
  background(0); 
-
+ image(video,0,0,700,600);
+ 
  fill("black");
  stroke("black");
  rect(680,0,20,700);
@@ -117,8 +123,7 @@ function move(){
    }
   if (ball.x-2.5*ball.r/2< 0){
   if (ball.y >= paddle1Y&& ball.y <= paddle1Y + paddle1Height) {
-    ball.dx = -ball.dx+0.5;
-    playerscore++;
+    ball.dx = -ball.dx+0.5; 
   }
   else{
     pcscore++;
@@ -163,4 +168,8 @@ function paddleInCanvas(){
   if(mouseY < 0){
     mouseY =0;
   }  
+}
+
+function modelLoaded(){
+  console.log("model_loaded");
 }
